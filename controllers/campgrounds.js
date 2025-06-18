@@ -1,3 +1,5 @@
+require('dotenv').config({ path: '../.env' });
+
 const Campground = require('../models/campground');
 const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
 const mapBoxToken = process.env.MAPBOX_TOKEN;
@@ -13,6 +15,9 @@ module.exports.renderNewForm = (req, res) => {
     res.render('campgrounds/new');
 }
 
+if (!mapBoxToken) {
+    console.warn("⚠️  MAPBOX_TOKEN is undefined. Check your .env or dotenv setup.");
+}
 
 module.exports.createCampground = async (req, res, next) => {
     //calling mapbox api tu request the location name

@@ -9,8 +9,8 @@ mapboxgl.accessToken = mapToken;
                 lightPreset: 'light'
             }
         },
-        center: [-103.5917, 40.6699],
-        zoom: 3
+        center: [109.505797, 3.6508611],
+        zoom: 5.3
     });
 
     map.addControl(new mapboxgl.NavigationControl());
@@ -44,9 +44,9 @@ mapboxgl.accessToken = mapToken;
                     'step',
                     ['get', 'point_count'],
                     '#2196F3',
-                    10,
+                    8,
                     '#00ACC1',
-                    30,
+                    20,
                     '#009688'
                 ],
                 'circle-radius': [
